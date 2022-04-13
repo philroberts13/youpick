@@ -17,5 +17,9 @@ router.get('', asyncHandler(async function(req, res) {
     return res.json(Lists)
 }))
 
+router.post('', asyncHandler(async function (req, res) {
+    const list = await List.create(req.body);
+    return res.json(list);
+}))
 
 module.exports = router;

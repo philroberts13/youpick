@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import UserListPage from "./components/UserListPage";
 import ListsPage from "./components/ListsPage";
+import ListsForm from "./components/ListsForm";
 import { getLists } from "./store/list";
 
 function App() {
@@ -17,31 +18,31 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  useEffect(() => {
-    (async () => {
-      await dispatch(getLists());
+  // useEffect(() => {
+  //   (async () => {
+  //     await dispatch(getLists());
 
 
 
-    })();
-  }, [dispatch]);
+  //   })();
+  // }, [dispatch]);
 
   return (
     <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/login">
+          <Route exact path="/login">
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
           </Route>
           <Route  exact path="/lists/:userId">
             <UserListPage />
           </Route>
           <Route  exact path="/lists">
-            <ListsPage />
+            <ListsForm />
           </Route>
         </Switch>
       )}
