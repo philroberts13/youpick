@@ -5,12 +5,25 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import UserListPage from "./components/UserListPage";
+import ListsPage from "./components/ListsPage";
+import { getLists } from "./store/list";
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+  }, [dispatch]);
+
+  useEffect(() => {
+    (async () => {
+      await dispatch(getLists());
+
+
+
+    })();
   }, [dispatch]);
 
   return (
@@ -23,6 +36,12 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route  exact path="/lists/:userId">
+            <UserListPage />
+          </Route>
+          <Route  exact path="/lists">
+            <ListsPage />
           </Route>
         </Switch>
       )}
