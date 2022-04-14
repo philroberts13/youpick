@@ -17,16 +17,17 @@ function App() {
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    dispatch(getLists());
   }, [dispatch]);
 
-  useEffect(() => {
-    (async () => {
-      await dispatch(getLists());
+  // useEffect(() => {
+  //   (async () => {
+  //     await dispatch(getLists());
 
 
 
-    })();
-  }, [dispatch]);
+  //   })();
+  // }, [dispatch]);
 
   return (
     <>

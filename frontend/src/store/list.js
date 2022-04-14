@@ -47,7 +47,7 @@ export const getUserLists = (userId) => async dispatch => {
 }
 
 export const getLists = () => async dispatch => {
-    const response = await fetch(`/api/lists`);
+    const response = await fetch('/api/lists');
 
     if(response.ok) {
         const allLists = await response.json();

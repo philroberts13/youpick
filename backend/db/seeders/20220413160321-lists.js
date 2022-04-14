@@ -10,27 +10,27 @@ module.exports = {
       */
    return queryInterface.bulkInsert('Lists', [
     {
-      userId: 7,
+      userId: 1,
       title: "Movies I need to see",
       type: "Movies"
     },
     {
-      userId: 7,
+      userId: 1,
       title: "Food I need to eat",
       type: "Food"
     },
     {
-      userId: 7,
+      userId: 1,
       title: "TV that isnt 30 Rock",
       type: "TV"
     },
     {
-      userId: 7,
+      userId: 1,
       title: "For when I start reading",
       type: "Books"
     },
     {
-      userId: 7,
+      userId: 1,
       title: "For when I have money",
       type: "Travel"
     }
