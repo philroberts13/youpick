@@ -107,7 +107,7 @@ export const editList = (list) => async (dispatch) => {
 let initialState = {};
 
 const listsReducer = (state = initialState, action) => {
-    let newState
+    let newState;
 
     switch(action.type) {
         case LOAD_LISTS:
@@ -116,7 +116,8 @@ const listsReducer = (state = initialState, action) => {
                     userLists[list.id] = list;
                 });
                 return {
-                    ...userLists
+                    ...userLists,
+                    ...state
                 }
 
         case LOAD_ALL_LISTS:
@@ -129,7 +130,7 @@ const listsReducer = (state = initialState, action) => {
                 }
 
         case LOAD_ONE_LIST:
-            newState = {...state}
+           let newState = {...state}
             newState[action.list.id] = action.list;
             return newState
 
@@ -155,7 +156,7 @@ const listsReducer = (state = initialState, action) => {
         }
 
         case DELETE_LIST:
-            const newState = {...state};
+            newState = {...state};
             delete newState[action.listId];
             return newState
 

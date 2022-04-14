@@ -10,6 +10,8 @@ import ListsForm from "./components/ListsForm";
 import ListDetailPage from "./components/ListDetailPage";
 import {getLists} from "./store/list"
 import EditListPage from "./components/EditListPage";
+import ProtectedRoute from "./components/Navigation/ProtectedRoute";
+import { getAllIdeas, getIdeas } from "./store/ideas";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,40 +20,34 @@ function App() {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
     dispatch(getLists());
+    dispatch(getAllIdeas());
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     await dispatch(getLists());
 
-
-
-  //   })();
-  // }, [dispatch]);
 
   return (
     <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path="/">
+            <SignupFormPage />
+          </Route>
           <Route exact path="/login">
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-          <Route exact path="/lists/:userId">
+          <ProtectedRoute exact path="/lists/:userId">
             <UserListPage />
-          </Route>
-          <Route  exact path="/lists">
+          </ProtectedRoute>
+          <ProtectedRoute  exact path="/lists">
             <ListsForm />
-          </Route>
-          <Route exact path="/lists/page/:id">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/lists/page/:id">
             <ListDetailPage />
-          </Route>
-          <Route exact path="/lists/page/edit/:id">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/lists/page/edit/:id">
             <EditListPage />
-          </Route>
+          </ProtectedRoute>
         </Switch>
       )}
     </>

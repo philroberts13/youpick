@@ -17,6 +17,12 @@ function LoginFormPage() {
     <Redirect to="/" />
   );
 
+  const demoUser = (e) => {
+    setCredential("Mr.Demo");
+    setPassword("password");
+    handleSubmit()
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
@@ -53,6 +59,7 @@ function LoginFormPage() {
         />
       </label>
       <button type="submit">Log In</button>
+      <button onClick={demoUser}>Demo User</button>
     </form>
     </div>
     </div>
