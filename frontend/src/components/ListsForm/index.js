@@ -3,6 +3,9 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux"
 import { createList } from "../../store/list";
+import { NavLink } from "react-router-dom";
+import { getUserLists } from "../../store/list";
+import UserListPage from "../UserListPage";
 
 
 const TYPES = [
@@ -23,6 +26,31 @@ function ListsForm() {
     const [errors, setErrors] = useState([]);
 
 
+    useEffect(() => {
+        dispatch(getUserLists(userId))
+    }, [dispatch]);
+
+    const userList = useSelector(state => Object.values(state.lists).filter(list => {
+        return list.userId === +userId;
+      }))
+
+      const testing = useSelector(state => {
+          return Object.values(state.lists);
+      })
+
+    let listCards = userList?.map(list => (
+        <>
+            <NavLink key={list.id} to={`/lists/page/${list.id}`}>
+            <div key={list.id}>
+                <div>
+                    {list.title}
+                </div>
+            </div>
+            </NavLink>
+        </>
+    ))
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -41,12 +69,16 @@ function ListsForm() {
         }});
 
         if(createdList) {
+            setTitle("")
             history.push(`/lists/${userId}`)
         }
 
     }
 
     return (
+        <div>
+            <UserListPage/>
+
         <div>
             Hello I am a Form
 
@@ -85,7 +117,7 @@ function ListsForm() {
             <button type="submit">submit</button>
         </form>
 
-
+        </div>
         </div>
 
     )

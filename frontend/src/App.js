@@ -36,10 +36,10 @@ function App() {
           <Route exact path="/login">
             <LoginFormPage />
           </Route>
-          <ProtectedRoute exact path="/lists/:userId">
+          {/* <ProtectedRoute exact path="/lists/:userId">
             <UserListPage />
-          </ProtectedRoute>
-          <ProtectedRoute  exact path="/lists">
+          </ProtectedRoute> */}
+          <ProtectedRoute  exact path="/lists/:userId">
             <ListsForm />
           </ProtectedRoute>
           <ProtectedRoute exact path="/lists/page/:id">
