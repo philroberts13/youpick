@@ -22,11 +22,13 @@ function UserListPage() {
 
     let listCards = userList?.map(list => (
         <>
+            <NavLink key={list.id} to={`/lists/page/${list.id}`}>
             <div key={list.id}>
                 <div>
                     {list.title}
                 </div>
             </div>
+            </NavLink>
         </>
     ))
 

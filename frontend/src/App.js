@@ -6,9 +6,10 @@ import SignupFormPage from "./components/SignupPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import UserListPage from "./components/UserListPage";
-import ListsPage from "./components/ListsPage";
 import ListsForm from "./components/ListsForm";
-import { getLists } from "./store/list";
+import ListDetailPage from "./components/ListDetailPage";
+import {getLists} from "./store/list"
+import EditListPage from "./components/EditListPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,14 +19,14 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     await dispatch(getLists());
+  useEffect(() => {
+    (async () => {
+      await dispatch(getLists());
 
 
 
-  //   })();
-  // }, [dispatch]);
+    })();
+  }, [dispatch]);
 
   return (
     <>
@@ -35,14 +36,20 @@ function App() {
           <Route exact path="/login">
             <LoginFormPage />
           </Route>
-          <Route exact path="/signup">
+          <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route  exact path="/lists/:userId">
+          <Route exact path="/lists/:userId">
             <UserListPage />
           </Route>
           <Route  exact path="/lists">
             <ListsForm />
+          </Route>
+          <Route exact path="/lists/page/:id">
+            <ListDetailPage />
+          </Route>
+          <Route exact path="/lists/page/edit/:id">
+            <EditListPage />
           </Route>
         </Switch>
       )}
