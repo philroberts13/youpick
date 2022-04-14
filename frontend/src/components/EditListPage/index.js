@@ -22,6 +22,7 @@ function EditListPage() {
 
     const [title, setTitle] = useState(list.title);
     const [type, setType] = useState(list.type);
+    const [errors, setErrors] = useState([])
 
     const updateTitle = (e) => setTitle(e.target.value)
     const updateType = (e) => setType(e.target.value);
@@ -37,7 +38,11 @@ function EditListPage() {
 
         const updatedList = await dispatch(editList(newUpdatedList))
         .catch(async (response) => {
-            const data = await response.json()
+            const data = await response.json();
+            if (data && data.errors) {
+                if (data.errors)
+                setErrors(data.errors);
+              }
         });
 
         if(updatedList) {
@@ -47,6 +52,16 @@ function EditListPage() {
     }
     return (
         <div>This is for Editing Stuff
+
+        <div className="errors">
+        {errors && !(errors[0] === 'nada') && (
+          <ul>
+          {errors?.map((error) => (
+            <li>{error}</li>
+          ))}
+          </ul>
+        )}
+        </div>
             <form onSubmit={handleSubmit}>
             <label>Title
             <input

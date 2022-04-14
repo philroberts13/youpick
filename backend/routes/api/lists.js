@@ -3,6 +3,8 @@ const asyncHandler = require('express-async-handler');
 const { User } = require('../../db/models');
 const {List} = require('../../db/models');
 const {Idea} = require('../../db/models')
+const validateList = require('../api/validations/lists')
+
 const router = express.Router();
 
 router.get('/:userId', asyncHandler(async function(req, res) {
@@ -21,12 +23,12 @@ router.get('/page/:id', asyncHandler(async function(req, res) {
     return res.json(list);
 }));
 
-router.post('', asyncHandler(async function (req, res) {
+router.post('', validateList,  asyncHandler(async function (req, res) {
     const list = await List.create(req.body);
     return res.json(list);
 }));
 
-router.put('/page/edit/:id', asyncHandler(async function (req, res) {
+router.put('/page/edit/:id', validateList,  asyncHandler(async function (req, res) {
     const { id, title, type } = req.body;
     await List.update({ id, title, type }, {where: {id: req.params.id} })
     const list = await List.findByPk(req.params.id)

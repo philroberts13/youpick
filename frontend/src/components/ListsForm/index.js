@@ -35,9 +35,12 @@ function ListsForm() {
         let createdList = await dispatch(createList(newList))
         .catch(async (response) => {
             const data = await response.json();
-            });
+            if (data && data.errors) {
+                if (data.errors)
+                setErrors(data.errors);
+        }});
 
-        if(createList) {
+        if(createdList) {
             history.push(`/lists/${userId}`)
         }
 
@@ -46,6 +49,17 @@ function ListsForm() {
     return (
         <div>
             Hello I am a Form
+
+            <div className="errors">
+        {errors && !(errors[0] === 'nada') && (
+          <ul>
+          {errors?.map((error) => (
+            <li>{error}</li>
+          ))}
+          </ul>
+        )}
+        </div>
+
         <form onSubmit={handleSubmit}>
             <label>Title
             <input
