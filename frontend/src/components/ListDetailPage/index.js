@@ -1,8 +1,9 @@
-import React, { useEffect} from "react";
+import React, { useEffect,  useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory, useParams } from "react-router-dom";
-import { getIdeas } from "../../store/ideas";
+import { getIdeas, createIdea } from "../../store/ideas";
 import { removeList, getListById, editList } from "../../store/list";
+import IdeaForm from "../IdeaForm";
 
 function ListDetailPage() {
     const dispatch = useDispatch();
@@ -27,6 +28,8 @@ function ListDetailPage() {
         </li>
     ))
 
+
+
 return (
     <div>
         <h1>This is about the list</h1>
@@ -35,6 +38,10 @@ return (
         <button><NavLink style={{textDecoration: 'none'}} to={`/lists/page/edit/${id}`}>Edit</NavLink></button>
 
         {ideasList}
+    <div>
+
+        <IdeaForm />
+    </div>
 
 
 

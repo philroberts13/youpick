@@ -30,25 +30,6 @@ function ListsForm() {
         dispatch(getUserLists(userId))
     }, [dispatch]);
 
-    const userList = useSelector(state => Object.values(state.lists).filter(list => {
-        return list.userId === +userId;
-      }))
-
-      const testing = useSelector(state => {
-          return Object.values(state.lists);
-      })
-
-    let listCards = userList?.map(list => (
-        <>
-            <NavLink key={list.id} to={`/lists/page/${list.id}`}>
-            <div key={list.id}>
-                <div>
-                    {list.title}
-                </div>
-            </div>
-            </NavLink>
-        </>
-    ))
 
 
     const handleSubmit = async (e) => {
@@ -66,16 +47,16 @@ function ListsForm() {
             if (data && data.errors) {
                 if (data.errors)
                 setErrors(data.errors);
-        }});
+            }});
 
-        if(createdList) {
-            setTitle("")
-            history.push(`/lists/${userId}`)
+            if(createdList) {
+                setTitle("")
+                history.push(`/lists/${userId}`)
+            }
+
         }
 
-    }
-
-    return (
+        return (
         <div>
             <UserListPage/>
 
