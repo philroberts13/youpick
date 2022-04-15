@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 const LOAD_IDEAS = 'ideas/LOAD_IDEAS';
 const LOAD_ALL_IDEAS = 'ideas/LOAD_ALL_IDEAS'
+const LOAD_IDEA = 'ideas/LOAD_IDEA'
 const UPDATE_IDEA = 'ideas/UPDATE_IDEA';
 const ADD_IDEA = 'ideas/ADD_IDEA';
 const DELETE_IDEA = 'ideas/DELETE_IDEA'
@@ -9,6 +10,11 @@ const DELETE_IDEA = 'ideas/DELETE_IDEA'
 const loadIdeas = ideas => ({
     type: LOAD_IDEAS,
     ideas
+})
+
+const loadIdea = idea => ({
+    type: LOAD_IDEAS,
+    idea
 })
 
 const updateIdea = idea => ({
@@ -42,6 +48,15 @@ export const getIdeas = (listId) => async dispatch => {
     if(response.ok) {
         const ideas = await response.json();
         dispatch(loadIdeas(ideas));
+    }
+}
+
+export const getIdea = (ideaId) => async dispatch => {
+    const response = await fetch(`/api/ideas/${ideaId}`);
+
+    if (response.ok) {
+        const idea = await response.json();
+        dispatch(loadIdea(idea))
     }
 }
 
@@ -100,6 +115,11 @@ const ideasReducer = (state = initialState, action) => {
                 return {
                     ...listIdeas
                 }
+
+        case LOAD_IDEA:
+            newState[action.idea.id] = action.list;
+            return newState
+
         case ADD_IDEA:
             if (!state[action.idea.id]) {
                 const newState = {

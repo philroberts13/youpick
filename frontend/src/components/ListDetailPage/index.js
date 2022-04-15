@@ -1,7 +1,7 @@
 import React, { useEffect,  useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory, useParams } from "react-router-dom";
-import { getIdeas, createIdea } from "../../store/ideas";
+import { getIdeas, createIdea, removeIdea } from "../../store/ideas";
 import { removeList, getListById, editList } from "../../store/list";
 import IdeaForm from "../IdeaForm";
 
@@ -12,6 +12,8 @@ function ListDetailPage() {
     const ideas = useSelector(state => state.ideas)
     const list = useSelector(state => (state.lists[+id]));
 
+    console.log(id)
+
     useEffect(() => {
         dispatch(getIdeas(id))
     }, [dispatch, id]);
@@ -21,15 +23,18 @@ function ListDetailPage() {
         await dispatch(removeList(id))
     }
 
+    const deleteIdea = async (e, ideaId) => {
+        await dispatch(removeIdea(ideaId))
+    }
+
     let ideasList = Object.values(ideas)?.map(idea => (
         <li key={idea.id}>
-            {idea.title}
-            : {idea.description}
+           <NavLink style={{textDecoration: 'none'}} to={`/ideas/${idea.id}`} >{idea.title}: {idea.description}</NavLink>
         </li>
     ))
 
 
-
+if (list) {
 return (
     <div>
         <h1>This is about the list</h1>
@@ -46,7 +51,8 @@ return (
 
 
     </div>
-)
+        )
+    }
 }
 
 export default ListDetailPage;

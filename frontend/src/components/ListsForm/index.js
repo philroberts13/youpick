@@ -23,7 +23,7 @@ function ListsForm() {
     const userId = user.id
     const [title, setTitle] = useState("");
     const [type, setType] = useState(TYPES[0]);
-    const [errors, setErrors] = useState([]);
+    const [errors, setErrors] = useState(['nada']);
 
 
     useEffect(() => {

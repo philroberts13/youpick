@@ -17,7 +17,7 @@ function IdeaForm() {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [errors, setErrors] = useState([]);
+    const [errors, setErrors] = useState(['nada']);
 
 
     const handleSubmit = async (e) => {

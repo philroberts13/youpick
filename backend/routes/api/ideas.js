@@ -1,7 +1,8 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { User } = require('../../db/models');
+const { User, sequelize } = require('../../db/models');
 const {Idea} = require('../../db/models')
+const validateIdea = require('./validations/ideas');
 
 
 const router = express.Router();
@@ -20,7 +21,17 @@ router.get('/:listId', asyncHandler(async function (req, res) {
     return res.json(ideas)
 }));
 
-router.put('/edit/:id', asyncHandler(async function (req, res) {
+router.get('/:ideaId', asyncHandler(async function (req, res) {
+    const idea = await Idea.findByPk(req.params.ideaId);
+    return res.json(idea)
+}));
+
+// router.get('/:ideaId', asyncHandler(async function (req, res) {
+//     const idea = await Idea.findOne({order: sequelize.random()});
+//     return res.json(idea)
+// }))
+
+router.put('/edit/:id', validateIdea, asyncHandler(async function (req, res) {
     const { id, title, description } = req.body;
     await Idea.update({id, title, description}, {where: {id: req.params.id} })
     const idea = await Idea.findByPk(req.params.id)
@@ -28,14 +39,14 @@ router.put('/edit/:id', asyncHandler(async function (req, res) {
     })
 );
 
-router.post('', asyncHandler(async function (req, res) {
+router.post('', validateIdea, asyncHandler(async function (req, res) {
     const idea = await Idea.create(req.body);
     return res.json(idea);
 }));
 
   router.delete('/edit/:id',asyncHandler(async (req, res) => {
         const idea = await Idea.findByPk(req.params.id);
-        await Idea.destroy();
+        await idea.destroy();
         return res.json({ message: 'success' });
     })
 );

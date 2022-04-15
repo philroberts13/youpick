@@ -12,6 +12,7 @@ import {getLists} from "./store/list"
 import EditListPage from "./components/EditListPage";
 import ProtectedRoute from "./components/Navigation/ProtectedRoute";
 import { getAllIdeas, getIdeas } from "./store/ideas";
+import IdeaDetailPage from "./components/IdeaDetailPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -47,6 +48,9 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/lists/page/edit/:id">
             <EditListPage />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/ideas/:id">
+          <IdeaDetailPage />
           </ProtectedRoute>
         </Switch>
       )}

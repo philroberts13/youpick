@@ -22,7 +22,7 @@ function EditListPage() {
 
     const [title, setTitle] = useState(list.title);
     const [type, setType] = useState(list.type);
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState(['nada'])
 
     const updateTitle = (e) => setTitle(e.target.value)
     const updateType = (e) => setType(e.target.value);
