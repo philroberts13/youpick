@@ -23,9 +23,6 @@ function ListDetailPage() {
         await dispatch(removeList(id))
     }
 
-    const deleteIdea = async (e, ideaId) => {
-        await dispatch(removeIdea(ideaId))
-    }
 
     let ideasList = Object.values(ideas)?.map(idea => (
         <li key={idea.id}>

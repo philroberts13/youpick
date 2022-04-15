@@ -85,7 +85,7 @@ export const createIdea = (payload) => async dispatch => {
 
 }
 
-export const editList = (idea) => async (dispatch) => {
+export const editIdea = (idea) => async (dispatch) => {
     const response = await csrfFetch(`/api/ideas/edit/${idea.id}`, {
         method: "PUT",
         headers: {'Content-Type': 'application/json'},
