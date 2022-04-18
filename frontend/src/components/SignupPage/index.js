@@ -32,7 +32,7 @@ function SignupFormPage() {
   return (
       <div className="paper-background">
       <div className='pattern'>
-      <h1 className='logo'>youpick</h1>
+      <h1 className='logo'>youpick</h1><p className='shrug'>¯\_(ツ)_/¯</p>
     <form onSubmit={handleSubmit} className='signupform'>
 
       <label>
@@ -41,7 +41,7 @@ function SignupFormPage() {
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
+
         />
       </label>
       <label>
@@ -50,7 +50,7 @@ function SignupFormPage() {
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          required
+
         />
       </label>
       <label>
@@ -59,7 +59,7 @@ function SignupFormPage() {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
+
         />
       </label>
       <label>
@@ -68,11 +68,11 @@ function SignupFormPage() {
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          required
+
         />
       </label>
       <button className='login-button' type="submit">Sign Up</button>
-      <ul>
+      <ul className="errors">
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
 

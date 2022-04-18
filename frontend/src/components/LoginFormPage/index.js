@@ -40,9 +40,7 @@ function LoginFormPage() {
             <h3 className='tagline'>Never wonder where to eat, where to go, or what to watch next</h3>
             <h2 className='again'>AGAIN</h2>
     <form onSubmit={handleSubmit} className='signupform'>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-      </ul>
+
       <div className='testing'>
       <label className='userName-label'>
         Username or Email...
@@ -50,7 +48,6 @@ function LoginFormPage() {
           type="text"
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
-          required
         />
       </label>
 
@@ -61,12 +58,15 @@ function LoginFormPage() {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
+
         />
       </label>
       </div>
       <button className='login-button' type="submit">Log In</button>
       <button className='demo-button' onClick={demoUser}>Demo User</button>
+      <ul className='errors'>
+        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+      </ul>
     </form>
     </div>
     </div>

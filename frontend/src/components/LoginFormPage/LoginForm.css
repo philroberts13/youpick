@@ -114,3 +114,7 @@ button {
     width: 329px;
 
 }
+
+.errors {
+    color: red;
+}
