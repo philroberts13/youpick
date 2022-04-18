@@ -1,0 +1,13 @@
+
+
+.listCard {
+font-family: Arial, Helvetica, sans-serif;
+display: flex;
+flex-direction: row;
+padding: 20px;
+border: 1px black solid;
+border-radius: 100px;
+margin-top: 2%;
+margin-bottom: 2%;
+
+}

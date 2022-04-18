@@ -2,7 +2,7 @@ import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import { getUserLists } from "../../store/list";
-
+import './UserListPage.css'
 
 function UserListPage() {
     const dispatch = useDispatch();
@@ -22,13 +22,14 @@ function UserListPage() {
 
     let listCards = userList?.map(list => (
         <>
-            <NavLink key={list.id} to={`/lists/page/${list.id}`}>
+           <div className="listCard"> <NavLink key={list.id} to={`/lists/page/${list.id}`}>
             <div key={list.id}>
                 <div>
                     {list.title}
                 </div>
             </div>
             </NavLink>
+            </div>
         </>
     ))
 

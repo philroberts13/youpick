@@ -4,6 +4,7 @@ import { NavLink, useHistory, useParams } from "react-router-dom";
 import { getIdeas, createIdea, removeIdea } from "../../store/ideas";
 import { removeList, getListById, editList } from "../../store/list";
 import IdeaForm from "../IdeaForm";
+import './ListDetail.css'
 
 function ListDetailPage() {
     const dispatch = useDispatch();
@@ -25,17 +26,17 @@ function ListDetailPage() {
 
 
     let ideasList = Object.values(ideas)?.map(idea => (
-        <li key={idea.id}>
+        <div key={idea.id} className='ideaCard'>
            <NavLink style={{textDecoration: 'none'}} to={`/ideas/${idea.id}`} >{idea.title}: {idea.description}</NavLink>
-        </li>
+        </div>
     ))
 
 
 if (list) {
 return (
     <div>
-        <h1>This is about the list</h1>
-        <div>{list.title}</div>
+
+        <h1>{list.title}</h1>
         <button onClick={deleteList}><NavLink style={{textDecoration: 'none'}} to={`/lists/${userId}`}>Delete</NavLink></button>
         <button><NavLink style={{textDecoration: 'none'}} to={`/lists/page/edit/${id}`}>Edit</NavLink></button>
 
