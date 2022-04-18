@@ -39,7 +39,10 @@ router.put('/page/edit/:id', validateList,  asyncHandler(async function (req, re
 router.delete('/page/:id', asyncHandler(async function(req, res) {
     const { id } = req.params;
     const list = await List.findByPk(id)
+    const ideas = await Idea.findAll({where: {listId: id}})
 
+    const ideasArr = [...ideas]
+    await ideasArr.forEach(idea => idea.destroy());
     await list.destroy();
     return res.json({ message: 'success' });
 

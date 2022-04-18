@@ -86,3 +86,31 @@ input[type="text"] {
     font: blue;
     font-family: 'Permanent Marker';
 }
+
+button {
+    font-family:'Permanent Marker';
+    background-color: transparent;
+    border: white;
+    cursor: pointer;
+}
+
+.shrug {
+    font-size: 40px;
+    margin-left: 60%;
+    margin-bottom: 10%;
+    margin-top: -4.1%;
+    height: 20px;
+}
+
+.again{
+    margin-left: 45%;
+    margin-top: -3.2%;
+    color: rgb(19, 9, 9);
+}
+
+.tagline {
+    margin-left: 30%;
+    color: rgb(0, 0, 139);
+    width: 329px;
+
+}

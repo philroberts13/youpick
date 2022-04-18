@@ -36,7 +36,9 @@ function LoginFormPage() {
   return (
       <div className='paper-background'>
         <div className='pattern'>
-            <h1 className='logo'>youpick</h1>
+            <h1 className='logo'>youpick </h1><p className='shrug'>¯\_(ツ)_/¯</p>
+            <h3 className='tagline'>Never wonder where to eat, where to go, or what to watch next</h3>
+            <h2 className='again'>AGAIN</h2>
     <form onSubmit={handleSubmit} className='signupform'>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
