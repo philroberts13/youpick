@@ -22,7 +22,7 @@ function UserListPage() {
 
     let listCards = userList?.map(list => (
         <>
-           <div className="listCard"> <NavLink key={list.id} to={`/lists/page/${list.id}`}>
+           <div className="listCard"> <NavLink style={{textDecoration: 'none'}} key={list.id} to={`/lists/page/${list.id}`}>
             <div key={list.id}>
                 <div>
                     {list.title}
@@ -38,7 +38,7 @@ function UserListPage() {
 
     return (
         <div>
-            <h1>Heres all the stuff you have to do!</h1>
+            <h1 className="title-line">Heres all the stuff you have to do!</h1>
             <div>{listCards}</div>
         </div>
     )

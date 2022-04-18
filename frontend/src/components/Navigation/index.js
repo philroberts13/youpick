@@ -14,13 +14,13 @@ function Navigation({ isLoaded }){
       <ProfileButton user={sessionUser} />
       <NavLink exact to={`/lists/${sessionUser.id}`}>Home</NavLink>
       </>
-    );
+    )
   } else {
     sessionLinks = (
-      <>
-        <NavLink to="/login">Log In</NavLink>
-        <NavLink to="/">Sign Up</NavLink>
-      </>
+      <div className='links'>
+        <div className='login-button'><NavLink style={{textDecoration: 'none'}} to="/login">Log In</NavLink></div>
+        <NavLink style={{textDecoration: 'none'}} to="/">Sign Up</NavLink>
+      </div>
     );
   }
 

@@ -44,6 +44,7 @@ function IdeaDetailPage() {
     if (idea) {
     return (
         <div>
+        <div>
             <h2>{idea.title}</h2>
             <div>{idea.description}</div>
             <form onSubmit={handleSubmit}>
@@ -66,6 +67,7 @@ function IdeaDetailPage() {
             <button onClick={deleteIdea}><NavLink style={{textDecoration: 'none'}} to={`/lists/page/${idea.listId}`}>Delete</NavLink></button>
 
 
+        </div>
         </div>
      )
     }

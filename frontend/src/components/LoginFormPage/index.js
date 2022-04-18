@@ -34,32 +34,37 @@ function LoginFormPage() {
   }
 
   return (
-      <div>
-        <div>
+      <div className='paper-background'>
+        <div className='pattern'>
+            <h1 className='logo'>youpick</h1>
     <form onSubmit={handleSubmit} className='signupform'>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
-      <label>
-        Username or Email
-        <input
+      <div className='testing'>
+      <label className='userName-label'>
+        Username or Email...
+        <input id='userName-input'
           type="text"
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
           required
         />
       </label>
-      <label>
-        Password
-        <input
+
+      <label className='password-label'>
+        Password...
+
+        <input className='password-input'
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
       </label>
-      <button type="submit">Log In</button>
-      <button onClick={demoUser}>Demo User</button>
+      </div>
+      <button className='login-button' type="submit">Log In</button>
+      <button className='demo-button' onClick={demoUser}>Demo User</button>
     </form>
     </div>
     </div>

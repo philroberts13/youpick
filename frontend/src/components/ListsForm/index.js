@@ -57,7 +57,8 @@ function ListsForm() {
         }
 
         return (
-        <div>
+        <div className="paper-background">
+        <div className="pattern">
             <UserListPage/>
 
         <div>
@@ -98,6 +99,7 @@ function ListsForm() {
             <button type="submit">submit</button>
         </form>
 
+        </div>
         </div>
         </div>
 
