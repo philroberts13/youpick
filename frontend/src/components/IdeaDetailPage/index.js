@@ -2,6 +2,7 @@ import React, { useEffect,  useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory, useParams } from "react-router-dom";
 import { getIdea, editIdea, removeIdea } from "../../store/ideas";
+import { getListById } from "../../store/list";
 import './IdeaDetail.css'
 
 
@@ -10,9 +11,10 @@ function IdeaDetailPage() {
     const history = useHistory();
     const {id} = useParams();
     const idea = useSelector(state => state.ideas[id])
-
+    const listId = idea.listId
     useEffect(() => {
         dispatch(getIdea(id))
+        dispatch(getListById(listId))
     }, [dispatch, id]);
 
     const [title, setTitle] = useState(idea.title);
