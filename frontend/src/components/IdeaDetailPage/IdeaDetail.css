@@ -1,6 +1,6 @@
-.paper-background {
-    height: 100px;
-    width: 700px;
+.paper-background-idea {
+    width: 500px;
+    height: 500px;
     position: relative;
     margin: 20px auto;
     padding-top: 40px;
@@ -10,7 +10,7 @@
 }
 
 
-.paper-background:before {
+.paper-background-idea:before {
     content: '';
     width: 2px;
     height: 100%;
@@ -25,22 +25,17 @@
 }
 
 
-.pattern {
+.pattern-idea {
     height: 100%;
     background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
 }
 
-.logo{
-    font-size: 60px;
-    font-family:'Permanent Marker';
-    margin-left: 10%;
-    margin-bottom: 4.5%;
-    margin-top: 4%;
-    height: 20px;
-    width: 70px;
+.idea-title{
+    margin-left: 9%;
+    /* margin-top: -2%; */
 }
 
-.signupform {
+.idea-form {
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
@@ -52,14 +47,7 @@
     margin-top: 5%;
     opacity: 100%;
 }
-input{
-    opacity: 100%;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
 
-}
-
-.label{
-    margin-top: 2%;
+.edit-button {
+    color: blue;
 }

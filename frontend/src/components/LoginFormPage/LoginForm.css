@@ -52,7 +52,7 @@
 
 }
 
-.signupform {
+.loginform {
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
@@ -105,7 +105,7 @@ button {
 .again{
     margin-left: 45%;
     margin-top: -3.2%;
-    color: rgb(19, 9, 9);
+    color: rgb(0, 0, 139);
 }
 
 .tagline {

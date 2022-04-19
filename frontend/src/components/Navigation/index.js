@@ -12,14 +12,14 @@ function Navigation({ isLoaded }){
     sessionLinks = (
         <>
       <ProfileButton user={sessionUser} />
-      <NavLink exact to={`/lists/${sessionUser.id}`}>Home</NavLink>
+      <NavLink style={{textDecoration: 'none', color: "blue"}} exact to={`/lists/${sessionUser.id}`}>Home</NavLink>
       </>
     )
   } else {
     sessionLinks = (
       <div className='links'>
-        <div className='login-button'><NavLink style={{textDecoration: 'none'}} to="/login">Log In</NavLink></div>
-        <NavLink style={{textDecoration: 'none'}} to="/">Sign Up</NavLink>
+        <div className='login-button'><NavLink style={{textDecoration: 'none', color: "blue"}} to="/login">Log In</NavLink></div>
+        <NavLink style={{textDecoration: 'none', color:"blue"}} to="/">Sign Up</NavLink>
       </div>
     );
   }

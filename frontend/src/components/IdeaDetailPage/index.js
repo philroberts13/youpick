@@ -2,6 +2,7 @@ import React, { useEffect,  useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory, useParams } from "react-router-dom";
 import { editIdea, removeIdea } from "../../store/ideas";
+import './IdeaDetail.css'
 
 
 function IdeaDetailPage() {
@@ -14,6 +15,8 @@ function IdeaDetailPage() {
     const [errors, setErrors] = useState(["nada"])
     const updateTitle = (e) => setTitle(e.target.value);
     const updateDescription = (e) => setDescription(e.target.value);
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -43,28 +46,29 @@ function IdeaDetailPage() {
     }
     if (idea) {
     return (
-        <div>
-        <div>
-            <h2>{idea.title}</h2>
-            <div>{idea.description}</div>
-            <form onSubmit={handleSubmit}>
-                <label>Title
+        <div className="paper-background-idea">
+        <div className="pattern-idea">
+            <h2 className="idea-title">{idea.title}</h2>
+            {/* <div>{idea.description}</div> */}
+            <form className="idea-form" onSubmit={handleSubmit}>
+                <label>Title...
                     <input
-                        type="text"
+                        type="textarea"
                         value={title}
                         onChange={updateTitle}
                         />
                 </label>
-                <label> Description
+                <label> Description...
                     <input
-                        type="text"
+                        type="textarea"
                         value={description}
                         onChange={updateDescription}
                     />
                 </label>
-                <button type="submit">Edit</button>
+                <button className="edit-button" type="submit">Confirm Edit</button>
+            <button onClick={deleteIdea}><NavLink style={{textDecoration: 'none', color: "blue"}} to={`/lists/page/${idea.listId}`}>Delete</NavLink></button>
+            <button><NavLink style={{textDecoration: 'none', color: "blue"}} to={`/lists/page/${idea.listId}`}>Go Back!</NavLink></button>
             </form>
-            <button onClick={deleteIdea}><NavLink style={{textDecoration: 'none'}} to={`/lists/page/${idea.listId}`}>Delete</NavLink></button>
 
 
         </div>

@@ -35,7 +35,7 @@ function SignupFormPage() {
       <h1 className='logo'>youpick</h1><p className='shrug'>¯\_(ツ)_/¯</p>
     <form onSubmit={handleSubmit} className='signupform'>
 
-      <label>
+      <label className="label">
         Email...
         <input
           type="text"

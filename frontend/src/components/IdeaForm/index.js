@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 
 
-function IdeaForm() {
+function IdeaForm({ closeModal }) {
     const dispatch = useDispatch();
     const history = useHistory();
     const user = useSelector((state) => state.session.user);
@@ -42,14 +42,13 @@ function IdeaForm() {
             setTitle("")
             setDescription("")
             // history.push(`/lists/${userId}`)
+            closeModal()
         }
 
     }
 
     return (
         <div>
-            Idea Form
-
             <div className="errors">
         {errors && !(errors[0] === 'nada') && (
           <ul>
@@ -59,6 +58,8 @@ function IdeaForm() {
           </ul>
         )}
         </div>
+        <div className="background-modal">
+        <div className="list-modal">
         <form onSubmit={handleSubmit}>
             <label>Title
                 <input
@@ -76,6 +77,8 @@ function IdeaForm() {
             </label>
             <button type="submit">submit</button>
         </form>
+        </div>
+        </div>
         </div>
     )
 }

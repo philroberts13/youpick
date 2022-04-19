@@ -42,9 +42,11 @@ function ListsForm() {
         return (
         <div className="paper-background">
         <div className="pattern">
+        <p className='shrug'>¯\_(ツ)_/¯</p>
+        <h1 className="title-line">Heres all the stuff you have to do!</h1>
+        <button className="add-list" onClick={handleModal}> + Add another list</button>
             <UserListPage/>
 
-        <button onClick={handleModal}>Add another list</button>
         {modalOn && <ListsFormModal closeModal={setModalOn} />}
         </div>
         </div>

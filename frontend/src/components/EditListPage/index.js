@@ -12,7 +12,7 @@ const TYPES = [
     "Food"
 ]
 
-function EditListPage() {
+function EditListPage({ closeModal2 }) {
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
@@ -46,12 +46,15 @@ function EditListPage() {
         });
 
         if(updatedList) {
-            history.push(`/lists/${userId}`)
+            // history.push(`/lists/${userId}`)
+            closeModal2()
+
         }
 
     }
     return (
-        <div>This is for Editing Stuff
+        <div className="background-modal">
+        <div className="list-modal">This is for Editing Stuff
 
         <div className="errors">
         {errors && !(errors[0] === 'nada') && (
@@ -86,6 +89,7 @@ function EditListPage() {
             </label>
             <button type="submit">submit</button>
         </form>
+        </div>
         </div>
     )
 }

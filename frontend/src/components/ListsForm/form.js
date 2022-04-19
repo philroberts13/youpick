@@ -49,7 +49,8 @@ function ListsFormModal({ closeModal }) {
 
             if(createdList) {
                 setTitle("")
-                history.push(`/lists/${userId}`)
+                // history.push(`/lists/${userId}`)
+                closeModal()
             }
 
         }
