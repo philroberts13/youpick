@@ -1,7 +1,7 @@
 import React, { useEffect,  useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory, useParams } from "react-router-dom";
-import { editIdea, removeIdea } from "../../store/ideas";
+import { getIdea, editIdea, removeIdea } from "../../store/ideas";
 import './IdeaDetail.css'
 
 
@@ -9,13 +9,17 @@ function IdeaDetailPage() {
     const dispatch = useDispatch();
     const history = useHistory();
     const {id} = useParams();
-    const idea = useSelector((state) => state.ideas[id])
+    const idea = useSelector(state => state.ideas[id])
+
+    useEffect(() => {
+        dispatch(getIdea(id))
+    }, [dispatch, id]);
+
     const [title, setTitle] = useState(idea.title);
     const [description, setDescription] = useState(idea.description)
     const [errors, setErrors] = useState(["nada"])
     const updateTitle = (e) => setTitle(e.target.value);
     const updateDescription = (e) => setDescription(e.target.value);
-
 
 
     const handleSubmit = async (e) => {
@@ -41,6 +45,8 @@ function IdeaDetailPage() {
         }
     }
 
+    console.log(idea === true)
+
     const deleteIdea = async (e) => {
         await dispatch(removeIdea(id))
     }
@@ -65,8 +71,8 @@ function IdeaDetailPage() {
                         onChange={updateDescription}
                     />
                 </label>
-                <button className="edit-button" type="submit">Confirm Edit</button>
-            <button onClick={deleteIdea}><NavLink style={{textDecoration: 'none', color: "blue"}} to={`/lists/page/${idea.listId}`}>Delete</NavLink></button>
+                <button className="edit-button" type="submit">Confirm</button>
+            <button onClick={deleteIdea}><NavLink style={{textDecoration: 'none', color: "red"}} to={`/lists/page/${idea.listId}`}>Delete</NavLink></button>
             <button><NavLink style={{textDecoration: 'none', color: "blue"}} to={`/lists/page/${idea.listId}`}>Go Back!</NavLink></button>
             </form>
 

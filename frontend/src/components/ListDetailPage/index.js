@@ -13,13 +13,14 @@ function ListDetailPage() {
     const userId = useSelector(state => state.session.user.id);
     const ideas = useSelector(state => state.ideas)
     const list = useSelector(state => state.lists[+id]);
-    console.log(list)
     const [modalOn, setModalOn] = useState(false);
     const [modalOn2, setEditModalOn] = useState(false);
 
     useEffect(() => {
         dispatch(getIdeas(id))
+        // dispatch(getListById(id))
     }, [dispatch, id]);
+
 
     const handleModal = (e) => {
         e.preventDefault();
@@ -41,7 +42,8 @@ function ListDetailPage() {
         <div className="ideaCard" key={idea.id}>
            <NavLink style={{textDecoration: 'none', color: "blue"}} to={`/ideas/${idea.id}`} >{idea.title}--> {idea.description}</NavLink>
         </div>
-    ))
+        ))
+
     const ideaArr = Object.values(ideas)
 
     // let randomIdea;
@@ -53,7 +55,6 @@ function ListDetailPage() {
     // console.log(randomIdea)
 
     let randomIdea = ideaArr[Math.floor(Math.random() * ideaArr.length)]
-    console.log(randomIdea)
 
 
 
@@ -65,8 +66,8 @@ return (
 
         <h1 className="list-title">{list.title}</h1>
         <div className="edit-delete">
-        <button onClick={deleteList}><NavLink style={{textDecoration: 'none', color: 'black'}} to={`/lists/${userId}`}>Delete</NavLink></button>
-        <button onClick={handleModal2}>Edit</button>
+        <button onClick={deleteList}><NavLink style={{textDecoration: 'none', color: 'red'}} to={`/lists/${userId}`}>Delete</NavLink></button>
+        <button className="link-button" onClick={handleModal2}>Edit</button>
         {modalOn2 && <EditListPage closeModal2={setEditModalOn} />}
         </div>
         <div>

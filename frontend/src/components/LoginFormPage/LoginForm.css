@@ -65,12 +65,13 @@
     opacity: 100%;
 }
 
-.login-button {
+#login-button {
     font-family:'Permanent Marker';
     background-color: transparent;
     border: white;
     cursor: pointer;
     padding-top: 5.9%;
+    color: darkblue;
 }
 
 .demo-button {
@@ -79,6 +80,7 @@
     border: white;
     cursor: pointer;
     padding-top: 1%;
+    color: darkblue;
 
 }
 

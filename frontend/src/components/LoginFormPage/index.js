@@ -62,7 +62,7 @@ function LoginFormPage() {
         />
       </label>
       </div>
-      <button className='login-button' type="submit">Log In</button>
+      <button id='login-button' type="submit">Log In</button>
       <button className='demo-button' onClick={demoUser}>Demo User</button>
       <ul className='errors'>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
