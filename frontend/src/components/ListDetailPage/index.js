@@ -15,6 +15,7 @@ function ListDetailPage() {
     const list = useSelector(state => state.lists[+id]);
     const [modalOn, setModalOn] = useState(false);
     const [modalOn2, setEditModalOn] = useState(false);
+    const [modalOn3, setIdeaModalOn] = useState(false);
 
     useEffect(() => {
         dispatch(getIdeas(id))
@@ -30,6 +31,11 @@ function ListDetailPage() {
     const handleModal2 = (e) => {
         e.preventDefault();
         setEditModalOn((open) => !open);
+      }
+
+      const handleModal3 = (e) => {
+        e.preventDefault();
+        setIdeaModalOn((open) => !open);
       }
 
 
@@ -71,7 +77,14 @@ return (
         {modalOn2 && <EditListPage closeModal2={setEditModalOn} />}
         </div>
         <div>
-        <button className="add-list" onClick={handleModal}> + add another idea</button>
+         <button className="add-list" onClick={handleModal}> + add an idea</button>
+        <div>
+            <button className="random-idea-title" onClick={handleModal3}>Need help with an Idea?</button>
+            {modalOn3 && <button closeModal3={setIdeaModalOn}>
+                <div className="random-idea-modal"><div className="random-idea">{randomIdea.title}</div></div>
+                <button className="cancel" onClick={() => setIdeaModalOn(false)}>close</button>
+            </button>}
+        </div>
         {ideasList}
         </div>
     <div>
@@ -79,9 +92,7 @@ return (
         {modalOn && <IdeaForm closeModal={setModalOn} />}
     </div>
 
-    <div>
-       {/* {randomIdea.title} */}
-    </div>
+
 
     </div>
     </div>
