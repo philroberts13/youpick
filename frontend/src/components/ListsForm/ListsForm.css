@@ -1,4 +1,4 @@
-.background-modal {
+/* .background-modal {
     width: 100%;
     height: 100%;
     left: 0;
@@ -7,22 +7,23 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, .7);
     z-index: 1;
-}
+} */
 
 
 
 .list-modal {
-    width: 20%;
-    height: 20%;
+    width: 660px;
+    height: 100%;
     padding: 20px;
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
-    top: 30%;
-    left: 35%;
-    border-radius: 8px;
+    background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+    /* position: absolute; */
+    /* top: 30%;
+    left: 35%; */
+    /* border-radius: 8px; */
 }
 
 .add-list {
@@ -32,4 +33,18 @@
 .shrug {
     padding-top: 20px;
     margin-top: -2.5%;
+}
+
+.form {
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+.form-title {
+    margin-top: 10%;
+    padding-top: 5px;
+}
+
+.submit {
+    color: green
 }

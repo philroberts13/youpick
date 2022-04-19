@@ -31,21 +31,12 @@
 }
 
 .idea-title{
-    margin-left: 9%;
+    margin-left: 11%;
     /* margin-top: -2%; */
 }
 
 .idea-form {
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    position: absolute;
-    padding: 20px;
-    z-index: 2;
-    font-family:'Permanent Marker';
-    margin-left: 10%;
-    margin-top: 5%;
-    opacity: 100%;
+    margin-left: 8%;
 }
 
 .edit-button {

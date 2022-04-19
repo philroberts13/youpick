@@ -10,10 +10,10 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-        <>
+        <div>
       <ProfileButton user={sessionUser} />
-      <NavLink style={{textDecoration: 'none', color: "blue"}} exact to={`/lists/${sessionUser.id}`}>Home</NavLink>
-      </>
+      <NavLink className='nav-buttons' style={{textDecoration: 'none', color: "blue"}} exact to={`/lists/${sessionUser.id}`}>Your Lists</NavLink>
+      </div>
     )
   } else {
     sessionLinks = (

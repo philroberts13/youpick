@@ -59,8 +59,8 @@ function IdeaForm({ closeModal }) {
         )}
         </div>
         <div className="background-modal">
-        <div className="list-modal">
-        <form onSubmit={handleSubmit}>
+        <div className="idea-list-modal">
+        <form className="idea-form" onSubmit={handleSubmit}>
             <label>Title
                 <input
                 type="text"
@@ -75,7 +75,8 @@ function IdeaForm({ closeModal }) {
                 onChange={(e) => setDescription(e.target.value)}
                 />
             </label>
-            <button type="submit">submit</button>
+            <button className="submit" type="submit">submit</button>
+            <button className="cancel" onClick={() => closeModal(false)}>cancel</button>
         </form>
         </div>
         </div>

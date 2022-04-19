@@ -65,6 +65,12 @@
 
   .profile-button {
     color: blue;
-    margin-right: 3%;
     font-size: 20px;
+    margin-left: -20%;
+
+  }
+
+  .nav-buttons {
+    font-size: 20px;
+    margin-left: 5%;
   }

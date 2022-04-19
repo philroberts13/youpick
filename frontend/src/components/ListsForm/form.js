@@ -57,45 +57,47 @@ function ListsFormModal({ closeModal }) {
 
     return (
         <div className="background-modal">
-        <div className="list-modal">
-        Hello I am a Form
+            <div className="list-modal">
 
-        <div className="errors">
-    {errors && !(errors[0] === 'nada') && (
-      <ul>
-      {errors?.map((error) => (
-        <li>{error}</li>
-      ))}
-      </ul>
-    )}
-    </div>
+            <form className="form" onSubmit={handleSubmit}>
+                    <div className="form-title">
+                    Your New List
+                    </div>
+                    <div className="errors">
+                    {errors && !(errors[0] === 'nada') && (
+                    <ul>
+                    {errors?.map((error) => (
+                    <li>{error}</li>
+                    ))}
+                    </ul>
+                    )}
+                    </div>
+                <label> Title
+                <input
+                    type="text"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    />
+                </label>
+                <label>Select a Type
+                <select
+                    onChange={(e) => setType(e.target.value)}
+                    value={type}
+                    >
+                        {TYPES.map(type => (
+                            <option
+                                key={type}
+                                >
+                                    {type}
+                                </option>
+                        ))}
+                </select>
+                </label>
+                <button className="submit" type="submit">submit</button>
+                <button className="cancel" onClick={() => closeModal(false)}>cancel</button>
+            </form>
 
-    <form onSubmit={handleSubmit}>
-        <label>Title
-        <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            />
-        </label>
-        <label>Select a Type
-        <select
-            onChange={(e) => setType(e.target.value)}
-            value={type}
-            >
-                {TYPES.map(type => (
-                    <option
-                        key={type}
-                        >
-                            {type}
-                        </option>
-                ))}
-        </select>
-        </label>
-        <button type="submit">submit</button>
-    </form>
-
-    </div>
+        </div>
     </div>
     )
 

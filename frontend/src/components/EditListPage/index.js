@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { editList } from "../../store/list";
 import { useParams } from "react-router-dom";
+import './EditList.css'
 
 const TYPES = [
     "Movies",
@@ -53,9 +54,11 @@ function EditListPage({ closeModal2 }) {
 
     }
     return (
-        <div className="background-modal">
-        <div className="list-modal">This is for Editing Stuff
-
+        <div className="edit-background-modal">
+        <div className="edit-list-modal">
+        <div id="form-title-edit">
+        This is for Editing Your List
+        </div>
         <div className="errors">
         {errors && !(errors[0] === 'nada') && (
           <ul>
@@ -65,8 +68,8 @@ function EditListPage({ closeModal2 }) {
           </ul>
         )}
         </div>
-            <form onSubmit={handleSubmit}>
-            <label>Title
+            <form onSubmit={handleSubmit} >
+            <label>Title...
             <input
                 type="text"
                 value={title}
@@ -87,7 +90,8 @@ function EditListPage({ closeModal2 }) {
                     ))}
             </select>
             </label>
-            <button type="submit">submit</button>
+            <button className="submit" type="submit">submit</button>
+            <button className="cancel" onClick={() => closeModal2(false)}>cancel</button>
         </form>
         </div>
         </div>
