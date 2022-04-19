@@ -8,7 +8,7 @@ const validateIdea = require('./validations/ideas');
 const router = express.Router();
 
 router.get('', asyncHandler(async function (req, res) {
-    const allIdeas = await Idea.findAll({rando()});
+    const allIdeas = await Idea.findAll();
 
     return res.json(allIdeas)
 }));

@@ -33,6 +33,10 @@ function ListsForm() {
         dispatch(getUserLists(userId))
     }, [dispatch]);
 
+    const userList = useSelector(state => Object.values(state.lists).filter(list => {
+        return list.userId === +userId;
+      }))
+
     const handleModal = (e) => {
         e.preventDefault();
         setModalOn((open) => !open);

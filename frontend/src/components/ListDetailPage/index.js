@@ -12,7 +12,8 @@ function ListDetailPage() {
     const { id } = useParams();
     const userId = useSelector(state => state.session.user.id);
     const ideas = useSelector(state => state.ideas)
-    const list = useSelector(state => (state.lists[+id]));
+    const list = useSelector(state => state.lists[+id]);
+    console.log(list)
     const [modalOn, setModalOn] = useState(false);
     const [modalOn2, setEditModalOn] = useState(false);
 
@@ -41,6 +42,20 @@ function ListDetailPage() {
            <NavLink style={{textDecoration: 'none', color: "blue"}} to={`/ideas/${idea.id}`} >{idea.title}--> {idea.description}</NavLink>
         </div>
     ))
+    const ideaArr = Object.values(ideas)
+
+    // let randomIdea;
+    // const randomizer = async (e) => {
+    //  await ideaArr[Math.floor(Math.random() * ideaArr.length)]
+    // }
+    // let randomIdea = ideaArr[Math.floor(Math.random() * ideaArr.length)]
+    // let randomIdea = ideasList[Math.floor(Math.random() * ideasList.length)];
+    // console.log(randomIdea)
+
+    let randomIdea = ideaArr[Math.floor(Math.random() * ideaArr.length)]
+    console.log(randomIdea)
+
+
 
 
 if (list) {
@@ -63,12 +78,16 @@ return (
         {modalOn && <IdeaForm closeModal={setModalOn} />}
     </div>
 
-
+    <div>
+       {/* {randomIdea.title} */}
+    </div>
 
     </div>
     </div>
+
         )
     }
 }
+
 
 export default ListDetailPage;

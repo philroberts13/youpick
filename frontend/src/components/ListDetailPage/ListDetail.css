@@ -1,6 +1,7 @@
 .paper-background {
     width: 700px;
-    height: 700px;
+    height: fit-content;
+    min-height: 700px;
     position: relative;
     margin: 20px auto;
     padding-top: 40px;
@@ -22,7 +23,8 @@
 
 
 .pattern {
-    height: 100%;
+    height: fit-content;
+    min-height: 700px;
     background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
 }
 
