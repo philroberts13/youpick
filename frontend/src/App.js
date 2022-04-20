@@ -19,9 +19,9 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
-    dispatch(getLists());
-    dispatch(getAllIdeas());
+    // dispatch(getLists());
+    // dispatch(getAllIdeas());
+    (async () => await dispatch(sessionActions.restoreUser()).then(async () => await dispatch(getLists())).then(async () => await dispatch(getAllIdeas()).then(() => setIsLoaded(true))))()
   }, [dispatch]);
 
 

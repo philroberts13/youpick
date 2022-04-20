@@ -12,16 +12,20 @@ function IdeaDetailPage() {
     const {id} = useParams();
     const idea = useSelector(state => state.ideas[id])
     const listId = idea.listId
-    useEffect(() => {
-        dispatch(getIdea(id))
-        dispatch(getListById(listId))
-    }, [dispatch, id]);
 
     const [title, setTitle] = useState(idea.title);
     const [description, setDescription] = useState(idea.description)
     const [errors, setErrors] = useState(["nada"])
+    const [loaded, setLoaded] = useState(false);
     const updateTitle = (e) => setTitle(e.target.value);
     const updateDescription = (e) => setDescription(e.target.value);
+
+
+    useEffect(() => {
+        (async () => await dispatch(getIdea(id)).then(async () => await dispatch(getListById(listId)).then(() => setLoaded(true))))()
+
+
+    }, [dispatch, id])
 
 
     const handleSubmit = async (e) => {
@@ -47,12 +51,14 @@ function IdeaDetailPage() {
         }
     }
 
-    console.log(idea === true)
+    console.log(loaded === true)
 
     const deleteIdea = async (e) => {
         await dispatch(removeIdea(id))
     }
-    if (idea) {
+
+    if (!loaded) return null;
+
     return (
         <div className="paper-background-idea">
         <div className="pattern-idea">
@@ -82,7 +88,7 @@ function IdeaDetailPage() {
         </div>
         </div>
      )
-    }
+
 }
 
 export default IdeaDetailPage;

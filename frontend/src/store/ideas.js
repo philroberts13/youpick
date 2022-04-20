@@ -13,7 +13,7 @@ const loadIdeas = ideas => ({
 })
 
 const loadIdea = idea => ({
-    type: LOAD_IDEAS,
+    type: LOAD_IDEA,
     idea
 })
 

@@ -13,16 +13,16 @@ function ListDetailPage() {
     const userId = useSelector(state => state.session.user.id);
     const ideas = useSelector(state => state.ideas)
     const list = useSelector(state => state.lists[+id]);
+    const [loaded, setLoaded] = useState(false);
     const [modalOn, setModalOn] = useState(false);
     const [modalOn2, setEditModalOn] = useState(false);
     const [modalOn3, setIdeaModalOn] = useState(false);
 
     useEffect(() => {
-        dispatch(getIdeas(id))
-        // dispatch(getListById(id))
+        (async () => await dispatch(getIdeas(id)).then(() => setLoaded(true)))()
     }, [dispatch, id]);
 
-
+    if (!loaded) return null;
     const handleModal = (e) => {
         e.preventDefault();
         setModalOn((open) => !open);
