@@ -60,7 +60,7 @@ function IdeaForm({ closeModal }) {
         </div>
         <div className="background-modal">
         <div className="idea-list-modal">
-        <form className="idea-form" onSubmit={handleSubmit}>
+        <form className="create-idea-form" onSubmit={handleSubmit}>
             <label>Title...
                 <input
                 type="text"

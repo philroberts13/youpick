@@ -37,6 +37,7 @@
 }
 
 .idea-form {
+    margin-top: 10%;
     margin-left: 15%;
 }
 
@@ -73,9 +74,9 @@ input[type="text"] {
     margin-top: 6%;
 }
 
-.shrug {
+.edit-shrug {
     font-size: 30px;
     margin-left: 60%;
     height: 20px;
-    margin-top: -19%;
+    margin-top: -15%;
 }

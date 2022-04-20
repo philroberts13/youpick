@@ -63,7 +63,7 @@ function IdeaDetailPage() {
         <div className="paper-background-idea">
         <div className="pattern-idea">
             <h2 className="idea-title">{idea.title}</h2>
-            <div className="shrug">¯\_(ツ)_/¯</div>
+            <div className="edit-shrug">¯\_(ツ)_/¯</div>
             <form className="idea-form" onSubmit={handleSubmit}>
                 <label>Title...
                     <input className="stuff"

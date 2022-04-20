@@ -106,5 +106,9 @@
   }
 
   .add-list {
-      margin-bottom: 2%;
+      /* margin-bottom: ; */
   }
+.create-idea-form {
+    margin-left: 8%;
+    margin-top: 2.5%;
+}
