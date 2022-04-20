@@ -8,7 +8,7 @@ indecisive people choose whats next.
 <img src="frontend/public/img/express.png" width="100">
 <img src="frontend/public/img/JS.png" width="100">
 <img src="frontend/public/img/react.png" width="100">
-<img src="frontend/public/img/redux.png">
+<img src="frontend/public/img/redux.png" width="100">
 </p>
 
 <!-- # Technology Used
