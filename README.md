@@ -2,20 +2,20 @@
 Youpick is an app loosely based off of GoodReads or you basic note app. It allows users to create lists of movies, food, tv shows,
 and travel ideas they have been meaning to try. Each list has the ideas of the user and a random idea selector to help especially
 indecisive people choose whats next.
-<!--
+
 # Technology Used
 <p float="left">
 <img src="frontend/public/img/express.png" width="100">
 <img src="frontend/public/img/JS.png" width="100">
 <img src="frontend/public/img/react.png" width="100">
 <img src="frontend/public/img/redux.png">
-</p> -->
+</p>
 
-# Technology Used
+<!-- # Technology Used
 *express
 *javascript
 *react
-*redux
+*redux -->
 
 # To get started:
 
