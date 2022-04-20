@@ -52,14 +52,6 @@ function ListDetailPage() {
 
     const ideaArr = Object.values(ideas)
 
-    // let randomIdea;
-    // const randomizer = async (e) => {
-    //  await ideaArr[Math.floor(Math.random() * ideaArr.length)]
-    // }
-    // let randomIdea = ideaArr[Math.floor(Math.random() * ideaArr.length)]
-    // let randomIdea = ideasList[Math.floor(Math.random() * ideasList.length)];
-    // console.log(randomIdea)
-
     let randomIdea = ideaArr[Math.floor(Math.random() * ideaArr.length)]
 
     let randomizerButton;

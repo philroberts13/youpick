@@ -68,7 +68,7 @@ function EditListPage({ closeModal2 }) {
           </ul>
         )}
         </div>
-            <form onSubmit={handleSubmit} >
+            <form className="edit-form" onSubmit={handleSubmit} >
             <label>Title...
             <input
                 type="text"

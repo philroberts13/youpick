@@ -72,7 +72,7 @@ function ListsFormModal({ closeModal }) {
                     </ul>
                     )}
                     </div>
-                <label> Title
+                <label> Title...
                 <input
                     type="text"
                     value={title}

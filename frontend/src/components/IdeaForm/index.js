@@ -61,14 +61,14 @@ function IdeaForm({ closeModal }) {
         <div className="background-modal">
         <div className="idea-list-modal">
         <form className="idea-form" onSubmit={handleSubmit}>
-            <label>Title
+            <label>Title...
                 <input
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 />
             </label>
-            <label>Description
+            <label>Description...
                 <input
                 type="text"
                 value={description}

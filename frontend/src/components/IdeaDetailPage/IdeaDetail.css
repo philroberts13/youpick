@@ -1,6 +1,6 @@
 .paper-background-idea {
     width: 500px;
-    height: 500px;
+    height: 400px;
     position: relative;
     margin: 20px auto;
     padding-top: 40px;
@@ -32,13 +32,50 @@
 
 .idea-title{
     margin-left: 11%;
+    font-size: 40px;
     /* margin-top: -2%; */
 }
 
 .idea-form {
-    margin-left: 8%;
+    margin-left: 15%;
 }
 
 .edit-button {
     color: green;
+}
+
+input[type="text"] {
+    color: purple;
+    font-family: 'Permanent Marker';
+}
+
+.stuff {
+    color: purple;
+    font-family: 'Permanent Marker';
+    margin-top: 2%;
+}
+
+.textarea {
+    margin-left: 1%;
+    margin-top: 6%;
+}
+
+.textarea-box {
+    display: flex;
+
+    color: purple;
+    font-family: 'Permanent Marker';
+    /* margin-top: 10%; */
+    padding-top: 10px;
+}
+
+.edit-buttons {
+    margin-top: 6%;
+}
+
+.shrug {
+    font-size: 30px;
+    margin-left: 60%;
+    height: 20px;
+    margin-top: -19%;
 }

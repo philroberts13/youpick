@@ -63,25 +63,29 @@ function IdeaDetailPage() {
         <div className="paper-background-idea">
         <div className="pattern-idea">
             <h2 className="idea-title">{idea.title}</h2>
-            {/* <div>{idea.description}</div> */}
+            <div className="shrug">¯\_(ツ)_/¯</div>
             <form className="idea-form" onSubmit={handleSubmit}>
                 <label>Title...
-                    <input
+                    <input className="stuff"
                         type="textarea"
                         value={title}
                         onChange={updateTitle}
                         />
                 </label>
+                <div className='textarea'>
                 <label> Description...
-                    <input
+                    <textarea className="textarea-box"
                         type="textarea"
                         value={description}
                         onChange={updateDescription}
                     />
                 </label>
-                <button className="edit-button" type="submit">Confirm</button>
+                </div>
+            <div className="edit-buttons">
+            <button className="edit-button" type="submit">Confirm</button>
             <button onClick={deleteIdea}><NavLink style={{textDecoration: 'none', color: "red"}} to={`/lists/page/${idea.listId}`}>Delete</NavLink></button>
             <button><NavLink style={{textDecoration: 'none', color: "blue"}} to={`/lists/page/${idea.listId}`}>Go Back!</NavLink></button>
+            </div>
             </form>
 
 

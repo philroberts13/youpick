@@ -104,3 +104,7 @@
       transform: rotateZ(0);
     }
   }
+
+  .add-list {
+      margin-bottom: 2%;
+  }
