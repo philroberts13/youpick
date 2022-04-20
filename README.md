@@ -4,10 +4,10 @@ and travel ideas they have been meaning to try. Each list has the ideas of the u
 indecisive people choose whats next.
 
 # Technology Used
-*express
-*javascript
-*react
-*redux
+* express
+* javascript
+* react
+* redux
 
 
 # To get started:
