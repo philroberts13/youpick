@@ -4,12 +4,10 @@ and travel ideas they have been meaning to try. Each list has the ideas of the u
 indecisive people choose whats next.
 
 # Technology Used
-<p float="left">
-<img src="frontend/public/img/express.png" width="100">
-<img src="frontend/public/img/JS.png" width="100">
-<img src="frontend/public/img/react.png" width="100">
-<img src="frontend/public/img/redux.png" width="100">
-</p>
+*express
+*javascript
+*react
+*redux
 
 
 # To get started:
