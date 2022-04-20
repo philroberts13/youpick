@@ -62,6 +62,15 @@ function ListDetailPage() {
 
     let randomIdea = ideaArr[Math.floor(Math.random() * ideaArr.length)]
 
+    let randomizerButton;
+
+    if (ideaArr.length >= 1) {
+        randomizerButton = (
+        <>
+        <button className="random-idea-title" onClick={handleModal3}>Can't decide what's next?</button>
+        </>
+        )
+    }
 
 
 
@@ -77,9 +86,8 @@ return (
         {modalOn2 && <EditListPage closeModal2={setEditModalOn} />}
         </div>
         <div>
-         <button className="add-list" onClick={handleModal}> + add an idea</button>
         <div>
-            <button className="random-idea-title" onClick={handleModal3}>Need help with an Idea?</button>
+            {randomizerButton}
             {modalOn3 && <button closeModal3={setIdeaModalOn}>
                 <div className="random-idea-modal"><div className="random-idea">{randomIdea.title}</div></div>
                 <button className="cancel" onClick={() => setIdeaModalOn(false)}>close</button>
@@ -87,6 +95,7 @@ return (
         </div>
         {ideasList}
         </div>
+        <button className="add-list" onClick={handleModal}> + add an idea</button>
     <div>
 
         {modalOn && <IdeaForm closeModal={setModalOn} />}

@@ -60,8 +60,8 @@
     padding: 15px;
     z-index: 2;
     font-family:'Permanent Marker';
-    margin-left: 10%;
-    margin-top: 5%;
+    margin-left: 8%;
+    margin-top: 5.9%;
     opacity: 100%;
 }
 
@@ -70,7 +70,7 @@
     background-color: transparent;
     border: white;
     cursor: pointer;
-    padding-top: 5.9%;
+    padding-top: 5.6%;
     color: darkblue;
 }
 
@@ -99,8 +99,8 @@ button {
 .shrug {
     font-size: 40px;
     margin-left: 60%;
-    margin-bottom: 10%;
-    margin-top: -4.1%;
+    margin-bottom: 12%;
+    margin-top: 5%;
     height: 20px;
 }
 
@@ -117,6 +117,27 @@ button {
 
 }
 
+.linkedIn {
+   margin-right: 4%;
+   margin-left: 6%;
+}
+
+.footer {
+    /* position: fixed; */
+    left: 30;
+    margin-top: 60%;
+    width: 100%;
+    text-align:left;
+    padding: 10px;
+
+  }
+
+
 .errors {
     color: red;
+}
+
+.github {
+    height: 5px;
+    width: 5px;
 }
