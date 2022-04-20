@@ -120,12 +120,14 @@ button {
 .linkedIn {
    margin-right: 4%;
    margin-left: 6%;
+   /* margin-bottom: 2%; */
 }
 
 .footer {
     /* position: fixed; */
     left: 30;
-    margin-top: 60%;
+    margin-top: 53.7%;
+    margin-left: 5%;
     width: 100%;
     text-align:left;
     padding: 10px;
@@ -138,6 +140,7 @@ button {
 }
 
 .github {
-    height: 5px;
+    height: 10px;
     width: 5px;
+    /* margin-bottom: -1%; */
 }

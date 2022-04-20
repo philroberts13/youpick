@@ -69,9 +69,9 @@ function LoginFormPage() {
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
     </form>
-    <div className='footer'>
-    <a href="https://linkedin.com/in/philip-roberts-2b218416a" target={"blank"} className='linkedIn'><img src='https://w7.pngwing.com/pngs/93/587/png-transparent-linkedin-logo-linkedin-logo-computer-icons-business-symbol-linkedin-icon-miscellaneous-blue-angle-thumbnail.png' style={{width:'35px', height:'35px'}}></img></a>
-    <a href="https://github.com/philroberts13/youpick" target={"blank"} className="github"><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' style={{width:'40px', height:'40px'}}></img> </a>
+    <div className='footer'>About me-->
+    <a href="https://linkedin.com/in/philip-roberts-2b218416a" target={"blank"} className='linkedIn'><img src='https://w7.pngwing.com/pngs/93/587/png-transparent-linkedin-logo-linkedin-logo-computer-icons-business-symbol-linkedin-icon-miscellaneous-blue-angle-thumbnail.png' style={{width:'20px', height:'20px'}}></img></a>
+    <a href="https://github.com/philroberts13/youpick" target={"blank"} className="github"><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' style={{width:'20px', height:'20px'}}></img> </a>
     </div>
     </div>
     </div>
