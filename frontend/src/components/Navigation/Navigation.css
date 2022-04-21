@@ -43,6 +43,7 @@
 
   .links{
       padding: 5px;
+      position: fixed;
   }
 
   .drop-down-menu {
@@ -66,7 +67,8 @@
   .profile-button {
     color: blue;
     font-size: 20px;
-    margin-left: -20%;
+    margin-right: 29%;
+
 
   }
 

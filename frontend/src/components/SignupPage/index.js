@@ -37,7 +37,7 @@ function SignupFormPage() {
 
       <label className="label">
         Email...
-        <input
+        <input className="signup-label-email"
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -46,7 +46,7 @@ function SignupFormPage() {
       </label>
       <label>
         Username...
-        <input
+        <input className="signup-label-username"
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -55,7 +55,7 @@ function SignupFormPage() {
       </label>
       <label>
         Password...
-        <input
+        <input className="signup-label-password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -64,7 +64,7 @@ function SignupFormPage() {
       </label>
       <label>
         Confirm Password...
-        <input
+        <input className="signup-label"
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
@@ -77,6 +77,10 @@ function SignupFormPage() {
       </ul>
 
     </form>
+    <div className='footer-signup'>About me-->
+    <a href="https://linkedin.com/in/philip-roberts-2b218416a" target={"blank"} className='linkedIn' style={{textDecoration: 'none', color: 'blue'}}>LinkedIn</a>
+    <a href="https://github.com/philroberts13/youpick" target={"blank"} className="github" style={{textDecoration: 'none', color: 'black'}}>Github</a>
+    </div>
     </div>
     </div>
   );

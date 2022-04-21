@@ -49,7 +49,7 @@
     z-index: 2;
     font-family:'Permanent Marker';
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 3%;
     opacity: 100%;
 }
 input{
@@ -62,4 +62,31 @@ input{
 
 .label{
     margin-top: 2%;
+}
+
+.footer-signup {
+    left: 30;
+    margin-top: 75.7%;
+    margin-left: 5%;
+    width: 100%;
+    text-align:left;
+    padding: 10px;
+    color:blueviolet
+}
+
+.signup-label {
+    margin-bottom: 6.5%;
+}
+
+.signup-label-email {
+    margin-bottom: 5.5%;
+}
+
+.signup-label-username{
+    margin-bottom: 5.6%;
+}
+
+.signup-label-password {
+
+    margin-bottom: 6.5%;
 }
