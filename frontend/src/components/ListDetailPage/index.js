@@ -46,7 +46,7 @@ function ListDetailPage() {
 
     let ideasList = Object.values(ideas)?.map(idea => (
         <div className="ideaCard" key={idea.id}>
-           <NavLink style={{textDecoration: 'none', color: "blue"}} to={`/ideas/${idea.id}`} >{idea.title}--> {idea.description}</NavLink>
+           <NavLink style={{textDecoration: 'none', color: "blue"}} to={`/ideas/${idea.id}`} ><div className="idea-title">{idea.title}: <div className="idea-description">{idea.description}</div></div></NavLink>
         </div>
         ))
 
