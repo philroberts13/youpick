@@ -29,7 +29,7 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
-    history.push('/login')
+    history.push('/')
   };
 
   return (
@@ -44,7 +44,7 @@ function ProfileButton({ user }) {
           <li>{user.username}</li>
           <li>{user.email}</li>
           <ul>
-            <button style={{color: "blue"}} onClick={logout}>Log Out</button>
+            <button className="logout" style={{color: "blue"}} onClick={logout}>Log Out</button>
           </ul>
         </ul>
         </div>

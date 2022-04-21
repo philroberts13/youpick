@@ -27,3 +27,8 @@ body {
     text-decoration: none;
 
 }
+
+#category {
+    color: blueviolet;
+    font-size: 12px;
+}

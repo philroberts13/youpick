@@ -26,6 +26,9 @@ function UserListPage() {
             <div key={list.id}>
                 <div>
                     {list.title}
+                    <div id="category">
+                    Category: {list.type}
+                    </div>
                 </div>
             </div>
             </NavLink>

@@ -31,10 +31,10 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          <Route exact path="/login">
+          <Route exact path="/">
             <LoginFormPage />
           </Route>
           {/* <ProtectedRoute exact path="/lists/:userId">

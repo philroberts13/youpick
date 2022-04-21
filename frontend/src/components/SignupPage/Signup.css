@@ -1,5 +1,6 @@
-.paper-background {
-    height: 100px;
+.paper-background-signup {
+    height: fit-content;
+    min-height: 900px;
     width: 700px;
     position: relative;
     margin: 20px auto;
@@ -10,7 +11,7 @@
 }
 
 
-.paper-background:before {
+.paper-background-signup:before {
     content: '';
     width: 2px;
     height: 100%;
@@ -25,7 +26,7 @@
 }
 
 
-.pattern {
+.pattern-signup {
     height: 100%;
     background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
 }
@@ -66,12 +67,13 @@ input{
 
 .footer-signup {
     left: 30;
-    margin-top: 75.7%;
+    margin-top: 67.3%;
     margin-left: 5%;
     width: 100%;
     text-align:left;
     padding: 10px;
-    color:blueviolet
+    color:blueviolet;
+    /* position: absolute; */
 }
 
 .signup-label {

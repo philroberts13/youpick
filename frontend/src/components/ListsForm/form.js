@@ -79,7 +79,7 @@ function ListsFormModal({ closeModal }) {
                     onChange={(e) => setTitle(e.target.value)}
                     />
                 </label>
-                <label>Select a Type
+                <label>Select a Category
                 <select
                     onChange={(e) => setType(e.target.value)}
                     value={type}

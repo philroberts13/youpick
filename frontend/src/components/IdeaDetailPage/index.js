@@ -87,6 +87,15 @@ function IdeaDetailPage() {
             <button><NavLink style={{textDecoration: 'none', color: "blue"}} to={`/lists/page/${idea.listId}`}>Go Back!</NavLink></button>
             </div>
             </form>
+            <div className="errors">
+                {errors && !(errors[0] === 'nada') && (
+                <ul>
+                {errors?.map((error) => (
+                    <li>{error}</li>
+                ))}
+                </ul>
+                )}
+            </div>
 
 
         </div>

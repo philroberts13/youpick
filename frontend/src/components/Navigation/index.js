@@ -18,8 +18,8 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <div className='links'>
-        <div className='login-button'><NavLink style={{textDecoration: 'none', color: "blue"}} to="/login">Log In</NavLink></div>
-        <NavLink style={{textDecoration: 'none', color:"blue"}} to="/">Sign Up</NavLink>
+        <div className='login-button'><NavLink style={{textDecoration: 'none', color: "blue"}} to="/">Log In</NavLink></div>
+        <NavLink style={{textDecoration: 'none', color:"blue"}} to="/signup">Sign Up</NavLink>
       </div>
     );
   }

@@ -33,8 +33,10 @@ function SignupFormPage() {
       <div className="paper-background">
       <div className='pattern'>
       <h1 className='logo'>youpick</h1><p className='shrug'>¯\_(ツ)_/¯</p>
-    <form onSubmit={handleSubmit} className='signupform'>
+      <h3 className='tagline'>Never wonder where to eat, where to go, or what to watch next</h3>
+       <h2 className='again'>AGAIN</h2>
 
+    <form onSubmit={handleSubmit} className='signupform'>
       <label className="label">
         Email...
         <input className="signup-label-email"
@@ -73,14 +75,17 @@ function SignupFormPage() {
       </label>
       <button className='login-button' type="submit">Sign Up</button>
       <ul className="errors">
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        {errors.map((error, idx) => <li key={idx}>{error}
+        {console.log(error)}
+        </li>)}
+
       </ul>
 
     </form>
-    <div className='footer-signup'>About me-->
-    <a href="https://linkedin.com/in/philip-roberts-2b218416a" target={"blank"} className='linkedIn' style={{textDecoration: 'none', color: 'blue'}}>LinkedIn</a>
-    <a href="https://github.com/philroberts13/youpick" target={"blank"} className="github" style={{textDecoration: 'none', color: 'black'}}>Github</a>
-    </div>
+      <div className='footer-signup'>About me-->
+      <a href="https://linkedin.com/in/philip-roberts-2b218416a" target={"blank"} className='linkedIn' style={{textDecoration: 'none', color: 'blue'}}>LinkedIn</a>
+      <a href="https://github.com/philroberts13/youpick" target={"blank"} className="github" style={{textDecoration: 'none', color: 'black'}}>Github</a>
+      </div>
     </div>
     </div>
   );
