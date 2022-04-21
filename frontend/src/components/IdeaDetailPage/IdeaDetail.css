@@ -30,7 +30,8 @@
     background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
 }
 
-.idea-title{
+.idea-title-page{
+    color: darkblue;
     margin-left: 11%;
     font-size: 40px;
     /* margin-top: -2%; */
