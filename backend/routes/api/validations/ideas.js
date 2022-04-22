@@ -6,14 +6,14 @@ const validateIdea = [
         .exists({ checkFalsy: true })
         .withMessage('Please provide a title'),
     check('title')
-        .isLength({ max: 40})
-        .withMessage('Titles must be 20 characters or less'),
+        .isLength({ max: 30})
+        .withMessage('Titles must be 30 characters or less'),
     check('description')
         .exists({ checkFalsy: true })
         .withMessage('Please provide a description'),
     check('description')
         .isLength({ max: 65})
-        .withMessage('Descriptions must be 50 characters or less'),
+        .withMessage('Descriptions must be 65 characters or less'),
 
     handleValidationErrors
 ];

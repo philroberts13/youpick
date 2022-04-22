@@ -1,6 +1,7 @@
 .paper-background-idea {
+    height: fit-content;
     width: 500px;
-    height: 400px;
+    min-height: 400px;
     position: relative;
     margin: 20px auto;
     padding-top: 40px;
@@ -26,7 +27,8 @@
 
 
 .pattern-idea {
-    height: 100%;
+    height: fit-content;
+    min-height: 400px;
     background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
 }
 
@@ -34,7 +36,7 @@
     color: darkblue;
     margin-left: 11%;
     font-size: 40px;
-    /* margin-top: -2%; */
+    margin-top: -2%;
 }
 
 .idea-form {
@@ -74,12 +76,13 @@ input[type="text"] {
 }
 
 .edit-buttons {
-    margin-top: 6%;
+    margin-top: 12%;
 }
 
 .edit-shrug {
     font-size: 30px;
     margin-left: 60%;
     height: 20px;
-    margin-top: -15%;
+    margin-top: 2%;
+
 }
