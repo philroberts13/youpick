@@ -1,6 +1,7 @@
 .paper-background-idea {
     height: fit-content;
-    width: 500px;
+    width: fit-content;
+    min-width: 500px;
     min-height: 400px;
     position: relative;
     margin: 20px auto;
@@ -34,6 +35,7 @@
 
 .idea-title-page{
     color: darkblue;
+    overflow-wrap:break-word;
     margin-left: 11%;
     font-size: 40px;
     margin-top: -2%;
