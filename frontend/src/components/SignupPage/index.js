@@ -82,10 +82,10 @@ function SignupFormPage() {
       </ul>
 
     </form>
-      <div className='footer-signup'>About me-->
+      {/* <div className='footer-signup'>About me-->
       <a href="https://linkedin.com/in/philip-roberts-2b218416a" target={"blank"} className='linkedIn' style={{textDecoration: 'none', color: 'blue'}}>LinkedIn</a>
       <a href="https://github.com/philroberts13/youpick" target={"blank"} className="github" style={{textDecoration: 'none', color: 'black'}}>Github</a>
-      </div>
+      </div> */}
     </div>
     </div>
   );

@@ -9,24 +9,21 @@
   } */
 
   .rightSide {
+    background: #ffc;
     font-family: "Permanent Marker";
-    width: 100%;
-    height: 50px;
-    align-items:flex-end;
-    justify-content:right;
+    width: 180px;
+    height: 180px;
+    /* align-items:flex-end; */
+    justify-content:center;
     display: flex;
-    padding-bottom: 5px;
-  }
+    position: fixed;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    transform: rotate(4deg);
+    top:200px;
+    margin: auto;
+    z-index: 1;
 
-  /* .bar {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    margin: 20px;
-    padding: 10px;
-  } */
+  }
 
 
   .button {
@@ -38,17 +35,22 @@
       padding: 5px;
       margin-right: 5px;
       margin-left: 5px;
-
+    font-size: 20px;
   }
 
   .links{
-      padding: 5px;
+
+      color:#000;
+      padding: 10px;
       position: fixed;
+      justify-content: center;
+      margin-top: 8%;
+      font-size: 20px;
   }
 
   .drop-down-menu {
     position: absolute;
-    left:19%;
+    left:10%;
     top: calc(90%);
     background-color:  white;
     border-radius: 8px;
@@ -61,11 +63,12 @@
   .login-button {
     font: black;
     color:black;
+    font-size: 20px;
 
   }
 
   .profile-button {
-    color: blue;
+    color: black;
     font-size: 20px;
     margin-right: 29%;
 
@@ -80,4 +83,9 @@
 
 .logout {
   margin-left: -3%;
+}
+
+.aboutMe {
+  margin-top: 70%;
+  margin-left: -9%;
 }
