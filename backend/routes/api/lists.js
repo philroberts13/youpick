@@ -9,7 +9,6 @@ const router = express.Router();
 
 router.get('/:userId', asyncHandler(async function(req, res) {
     const userLists = await List.findAll({where: {userId: req.params.userId}})
-    console.log(userLists)
     return res.json(userLists)
 }));
 

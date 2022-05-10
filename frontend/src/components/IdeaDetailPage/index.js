@@ -51,8 +51,6 @@ function IdeaDetailPage() {
         }
     }
 
-    console.log(loaded === true)
-
     const deleteIdea = async (e) => {
         await dispatch(removeIdea(id))
     }
