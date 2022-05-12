@@ -57,3 +57,13 @@ indecisive people choose whats next.
 # Lists
 <img src="frontend/public/img/lists.png" >
 Users have full CRUD for lists that they have created, modals were incorported into the notepad background to allow for them to make/edit Lists on the same page that they are listed.
+
+# Ideas
+<img src="frontend/public/img/ideas.png" >
+
+Similairly users have full CRUD for ideas on thier lists, there is a modal to add the ideas to the lists however the editing is done on a seperate smaller page that also allows for them to delete the idea there.
+
+# Randomized Selector
+<img src="frontend/public/img/randomizer.png" >
+
+On the page for each list there is a button that selects an idea at random for users that cant decided which idea to try next!
