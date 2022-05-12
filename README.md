@@ -51,3 +51,9 @@ indecisive people choose whats next.
   * npm start
 
 10. A demo user button is available to use or you may create a new user account by clicking on "Sign up" in the nav bar.
+
+# Features
+
+# Lists
+<img src="frontend/public/img/lists.png" >
+Users have full CRUD for lists that they have created, modals were incorported into the notepad background to allow for them to make/edit Lists on the same page that they are listed.
