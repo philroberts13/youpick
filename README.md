@@ -67,3 +67,6 @@ Similairly users have full CRUD for ideas on thier lists, there is a modal to ad
 <img src="frontend/public/img/randomizer.png" >
 
 On the page for each list there is a button that selects an idea at random for users that cant decided which idea to try next!
+This was done by simply converting the list of ideas into an array and utilizing math.random * the length of the array to select one as seen below.
+
+<img src="frontend/public/img/randomizerCode.png" >
