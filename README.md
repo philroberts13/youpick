@@ -3,6 +3,8 @@ Youpick is an app loosely based off of GoodReads or you basic note app. It allow
 and travel ideas they have been meaning to try. Each list has the ideas of the user and a random idea selector to help especially
 indecisive people choose whats next.
 
+<img src="frontend/public/img/homePage.png" >
+
 # Technology Used
 <p float="left">
 <img src="frontend/public/img/express.png" width="100">
